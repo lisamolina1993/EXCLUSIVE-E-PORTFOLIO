@@ -7,32 +7,65 @@
     padding: 0;
 }
 
-/* body {
-    max-width: 100vw;
-    overflow-x: hidden;
-} */
-
 #landing--page {
     min-height: 100vh;
 }
 
-html {
-    scroll-behavior: smooth;
+#projects {
+    min-height: 100vh;
 }
 
-section {
+main, section {
     background-color: rgb(245, 245, 245);
 }
+
+/* html {
+    scroll-behavior: smooth;
+} */
 
 li {
     list-style-type: none;
 }
 
+i {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.click {
+    /* transform: scale(0.8); */
+    transition: all 300ms ease;
+}
+
+.click:hover {
+    transform: scale(1.1);
+}
+
+button {
+   cursor: pointer;
+}
+
+.container {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.row {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+
 /* 
 NAV BAR
 */
 
-.nav--wrapper {
+.nav__wrapper {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -42,7 +75,7 @@ NAV BAR
     max-width: 1200px;
     padding: 0 20px;
 }
-.nav-link {
+.nav__link {
     text-decoration: none;
     color: #242424;
     font-weight: 700;
@@ -73,11 +106,11 @@ NAV BAR
     background-color: #242424;
 }
 
-.links--wrapper {
+.links__wrapper {
     display: flex;
 }
 
-.img--logo {
+.img__logo {
     width: 50px;
     height: 50px;
     filter: invert(1);
@@ -85,17 +118,25 @@ NAV BAR
 
 /* HEADER */
 
-.header--wrapper {
-   width: 50%;
+.header {
+   position: absolute;
+   top: 54%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   max-width: 1000px;
+   padding: 0 30px;
 }
 
 .title {
     font-size: 120px;
+    margin-bottom: 12px;
+    line-height: 1;
 }
 
-.title-2 {
+.title__2 {
     color: rgba(172, 13, 66, 0.8);
-    font-size: 120px;
+    margin-bottom: 12px;
 }
 
 .pink {
@@ -103,11 +144,128 @@ NAV BAR
     font-weight: 700;
 }
 
-.header--para {
+.header__para {
     font-size: 24px;
-    line-height: 42px;
+    line-height: 2;
+    max-width: 500px; /* this helps the paragraph to not stretch all over the page */
 }
 
+.social__list {
+    display: flex;
+    margin-top: 16px;
+}
 
+.social__link {
+    background-color: rgba(172, 13, 66, 0.8);
+    padding: 6px;
+    border-radius: 50%;
+    margin-right: 12px;
+    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
 
+.email__button {
+    background-color: #242424;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    font-size: 32px;
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+}
 
+.scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.scroll__icon {
+    width: 20px;
+    height: 30px;
+    border: 2px solid #242424;
+    border-radius: 24px;
+    display: flex; /* display flex, justify content and align items work with the pseudo element below*/
+    justify-content: center;
+    align-items: center;
+}
+.scroll__icon::after {  /* this part adds the little dot in the middle along with the flexbox - justify & align*/
+    content: "";
+    width: 4px;
+    height: 6px;
+    background-color: #242424;
+    border-radius: 24px;
+    animation: scroll 1000ms infinite alternate-reverse;
+}
+
+/* creating animation to the scroll icon*/
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
+/* 
+PROJECTS
+*/
+
+.project__title {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 60px;
+}
+
+.img__one {
+    width: 100%;
+}
+
+.project__wrapper {
+    position: relative;
+    border-radius: 20px; /* this won't work until the overflow is hidden*/
+    overflow: hidden;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.50);
+}
+.project__description {
+    position: absolute;
+    max-width: 550px;
+    top: 50%;
+    transform: translateY(-50%); /* everytime you do 50% top - transform Y to -50%*/
+    left: 90px;
+    color: white;
+}
+.project__wrapper--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1d25;
+    opacity: 0.7;
+}
+
+.project__description--tag {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.project__description--title {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.project__description--subtitle {
+    font-size: 16px;
+}
+.project__description--para {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px 0;
+}
