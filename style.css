@@ -12,11 +12,20 @@
 }
 
 #projects {
-    min-height: 100vh;
+    min-height: 100hv;
+}
+
+#footer {
+    min-height: 50vh;
+    padding: 60px 0;
 }
 
 main, section {
     background-color: rgb(245, 245, 245);
+}
+
+footer {
+    background-color: #242424;
 }
 
 /* html {
@@ -101,7 +110,6 @@ NAV BAR
 .nav__link-effect:hover::after {
     width: 100%;
 }
-
 .nav__link-effect--black::after {
     background-color: #242424;
 }
@@ -288,3 +296,58 @@ PROJECTS
 .project {
     margin-bottom: 135px;
 }
+
+/* 
+FOOTER
+*/
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__holder {
+    text-align: center;
+}
+
+.footer__img {
+    width: 70px;
+    height: 70px;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.footer__link {
+    color: white;
+    margin: 32px;
+    position: relative;
+}
+
+.copyright__para {
+    color: white;
+    text-align: center;
+    margin: 32px;
+}
+
+.footer__link-efect::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    transition: width 300ms ease;
+}
+.footer__link-efect:hover::after {
+    width: 100%;
+}
+.footer__link-efect--white:after {
+    background-color: white;
+}
+
