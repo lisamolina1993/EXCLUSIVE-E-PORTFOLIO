@@ -18,7 +18,7 @@ function contact(event) {
     loading.classList += " modal__overlay--visible"
     setTimeout(() => { //this timeout helps to see the results without actually sending/wasting emails //
         loading.classList.remove("modal__overlay--visible");
-        success.classList += "modal__overlay--visible";
+        success.classList += " modal__overlay--visible";
         console.log('it worked 1')
     }, 1000);
 }
