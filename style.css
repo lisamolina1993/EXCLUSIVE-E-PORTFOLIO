@@ -268,13 +268,20 @@ MODAL
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    box-shadow: 0px 20px 80px 0;
+    box-shadow: 0px 20px 80px 0 rgb(0, 0, 0, 0.55);
     height: 700px;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 0.5s, box-shadow 0.5s ease;
 }
-
+.modal--open .modal {
+    z-index: 60;
+    box-shadow: 0px 20px 80px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
+}
 .modal__half {
     width: 50%;
     display: flex;
@@ -282,15 +289,23 @@ MODAL
     padding: 72px 60px;
     justify-content: center;
     position: relative;
+    transition: transform 300ms ease-in;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%); 
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
+    transform: translateX(-110%);
 }
 
 .modal__contact {
     background-color: #242424;
     color: white; 
+    transform: translateX(110%);
 }
 
 .language__wrapper {
@@ -380,7 +395,7 @@ MODAL
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -401,6 +416,7 @@ MODAL
 
 .modal__overlay--visible {
     z-index: 1;
+    display: flex;
 }
 
 .fa-spinner {
