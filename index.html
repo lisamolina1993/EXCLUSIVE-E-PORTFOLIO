@@ -34,10 +34,10 @@
                     <li class="link--list">
                         <a href="#" class="nav__link nav__link-effect nav__link-effect--black">Projects</a>
                     </li>
-                    <li class="link--list">
+                    <li class="link--list" onclick="toggleModal()">
                         <a href="#" class="nav__link nav__link-effect nav__link-effect--black">Contact</a>
                     </li>
-                    <li class="link--list click">
+                    <li class="link--list click" onclick="toggleContrast()">
                         <a href="#" class="nav__link nav__link-effect nav__link-effect--black"><i
                                 class="fa-solid fa-circle-half-stroke"></i></a>
                     </li>
@@ -56,7 +56,7 @@
                     I'm a <span class="pink">front-end developer</span> passionate about creating beautiful and
                     functional web experiences for
                     users, and most importantly to boost companies' success. <br>Here's a bit more <span
-                        class="pink">about
+                        class="pink click" onclick="toggleModal()">about
                         me.</span></br>
                 </p>
                 <ul class="social__list">
@@ -76,7 +76,7 @@
             </div>
         </header>
         <button class="email__button click" onclick="toggleModal()">
-            <i class="fa-solid fa-envelope" style="color: white;"></i>
+            <i class="fa-solid fa-envelope fa-envelope--white fa-envelope--black"></i>
         </button>
         <a href="projects" class="scroll">
             <div class="scroll__icon click"></div>
@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div class="modal__half modal__contact">
-                <i class="fas fa-times modal__exit click"></i>
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
                 <h4 class="modal__subt">I'm currently open to new opportunities.</h4>
                 <form id="contact__form" onsubmit="contact(event)">

@@ -29,7 +29,8 @@ footer {
     background-color: #242424;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     background-color: #242424;
     color: #fff;
@@ -54,7 +55,8 @@ label {
     margin-bottom: 6px;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #f06449;
 }
 
@@ -77,6 +79,7 @@ a {
 .click {
     /* transform: scale(0.8); */
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 .click:hover {
@@ -102,6 +105,53 @@ button {
 .pink {
     color: rgba(172, 13, 66, 0.8);
     font-weight: 700;
+}
+
+nav,
+/* this is for when the modal is not open*/
+.scroll,
+.header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.dark-theme .title,
+.dark-theme .header__para,
+.dark-theme .nav__link,
+.dark-theme .project__title,
+.dark-theme .fa-circle-half-stroke 
+{
+    color: white;
+}
+
+.dark-theme section,
+main {
+    background-color: #242424;
+}
+
+.dark-theme .img__logo {
+    filter: none;
+}
+.dark-theme .scroll__icon {
+    border-color: #fff;
+}
+.dark-theme .scroll__icon::after {
+    background-color: #fff;
+}
+.dark-theme .email__button {
+    background-color: #fff;
+}
+.dark-theme .fa-envelope--black {
+    color: #242424;
 }
 
 /* 
@@ -187,7 +237,8 @@ NAV BAR
 .header__para {
     font-size: 24px;
     line-height: 2;
-    max-width: 500px; /* this helps the paragraph to not stretch all over the page */
+    max-width: 500px;
+    /* this helps the paragraph to not stretch all over the page */
 }
 
 .social__list {
@@ -218,6 +269,9 @@ NAV BAR
     bottom: 32px;
     right: 32px;
 }
+.fa-envelope--white {
+    color: #fff;
+}
 
 .scroll {
     position: absolute;
@@ -231,7 +285,8 @@ NAV BAR
     height: 30px;
     border: 2px solid #242424;
     border-radius: 24px;
-    display: flex; /* display flex, justify content and align items work with the pseudo element below*/
+    display: flex;
+    /* display flex, justify content and align items work with the pseudo element below*/
     justify-content: center;
     align-items: center;
 }
@@ -268,20 +323,22 @@ MODAL
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    box-shadow: 0px 20px 80px 0 rgb(0, 0, 0, 0.55);
     height: 700px;
     border-radius: 20px;
+    background-color: rgb(245, 245, 245);
     overflow: hidden;
     display: flex;
     visibility: hidden;
     z-index: -1;
-    transition: visibility 1s, z-index 0.5s, box-shadow 0.5s ease;
+    transition: visibility 1s, z-index 0.5s, box-shadow 0.5s ease-out;
 }
+
 .modal--open .modal {
     z-index: 60;
     box-shadow: 0px 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible;
 }
+
 .modal__half {
     width: 50%;
     display: flex;
@@ -289,12 +346,12 @@ MODAL
     padding: 72px 60px;
     justify-content: center;
     position: relative;
-    transition: transform 300ms ease-in;
+    transition: all 300ms ease-in;
 }
 
 .modal--open .modal__about,
 .modal--open .modal__contact {
-    transform: translateX(0%); 
+    transform: translateX(0%);
 }
 
 .modal__about {
@@ -304,7 +361,7 @@ MODAL
 
 .modal__contact {
     background-color: #242424;
-    color: white; 
+    color: white;
     transform: translateX(110%);
 }
 
@@ -390,7 +447,7 @@ MODAL
 }
 
 .modal__overlay {
-   position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -427,6 +484,7 @@ MODAL
     0% {
         transform: rotate(0);
     }
+
     100% {
         transform: rotate(360deg);
     }
